@@ -48,7 +48,6 @@ public class SubstitutionCipherModularMain {
                     input = keyboard.nextLine().toUpperCase();
 
                     comptador = 0;
-                    alfabetXifrat = "";
                     resultat = "";
 
                     while (comptador <= input.length() - 1) {
