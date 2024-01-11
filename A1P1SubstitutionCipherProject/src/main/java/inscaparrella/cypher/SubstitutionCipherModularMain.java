@@ -10,10 +10,10 @@ public class SubstitutionCipherModularMain {
     public static void main(String[] args) {
 
         final String ALFABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        String clau, alfabetXifrat = "", input, resultat = "";
-        char l;
+        String clau, alfabetXifrat, input, resultat;
+        char lletra;
         Scanner keyboard = new Scanner(System.in);
-        int menu, comptador = 0, posicio;
+        int menu, comptador, posicio;
 
         do {
             System.out.println("Menú");
@@ -22,7 +22,6 @@ public class SubstitutionCipherModularMain {
             System.out.println("2. Desxifrar un text");
             menu = keyboard.nextInt();
             keyboard.nextLine();
-            ;
 
             switch (menu) {
                 case 0:
@@ -38,9 +37,9 @@ public class SubstitutionCipherModularMain {
                     alfabetXifrat = "";
 
                     while (comptador <= clau.length() - 1) {
-                        l = clau.charAt(comptador);
-                        if (!alfabetXifrat.contains(String.valueOf(l))) {
-                            alfabetXifrat += l + "";
+                        lletra = clau.charAt(comptador);
+                        if (!alfabetXifrat.contains(String.valueOf(lletra))) {
+                            alfabetXifrat += lletra + "";
                         }
                         comptador++;
                     }
@@ -53,8 +52,8 @@ public class SubstitutionCipherModularMain {
                     resultat = "";
 
                     while (comptador <= input.length() - 1) {
-                        l = input.charAt(comptador);
-                        posicio = ALFABET.indexOf(l);
+                        lletra = input.charAt(comptador);
+                        posicio = ALFABET.indexOf(lletra);
                         if (posicio != -1) {
                             resultat += alfabetXifrat.charAt(posicio);
                         }
@@ -73,9 +72,9 @@ public class SubstitutionCipherModularMain {
                     alfabetXifrat = "";
 
                     while (comptador <= clau.length() - 1) {
-                        l = clau.charAt(comptador);
-                        if (!alfabetXifrat.contains(String.valueOf(l))) {
-                            alfabetXifrat += l + "";
+                        lletra = clau.charAt(comptador);
+                        if (!alfabetXifrat.contains(String.valueOf(lletra))) {
+                            alfabetXifrat += lletra + "";
                         }
                         comptador++;
                     }
@@ -87,8 +86,8 @@ public class SubstitutionCipherModularMain {
                     resultat = "";
 
                     while (comptador <= input.length() - 1) {
-                        l = input.charAt(comptador);
-                        posicio = alfabetXifrat.indexOf(l);
+                        lletra = input.charAt(comptador);
+                        posicio = alfabetXifrat.indexOf(lletra);
                         if (posicio != -1) {
                             resultat += ALFABET.charAt(posicio);
                         }
