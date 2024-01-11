@@ -34,6 +34,8 @@ public class SubstitutionCipherModularMain {
                     keyboard.nextLine();
                     clau += ALFABET;
                     comptador = 0;
+                    alfabetXifrat = "";
+                    resultat = "";
 
                     while (comptador <= clau.length() - 1) {
                         l = clau.charAt(comptador);
@@ -56,17 +58,16 @@ public class SubstitutionCipherModularMain {
                     }
 
                     System.out.println("El resultat del xifratge és: " + resultat);
-                    alfabetXifrat = "";
-                    resultat = "";
                     break;
-
+                    
                 case 2:
                     System.out.println("siusplau, introdueixi la paraula clau que es va utilitzar per xifrar el text:  ");
                     clau = keyboard.next().toUpperCase();
                     keyboard.nextLine();
                     clau = clau + ALFABET;
-                    alfabetXifrat = "";
                     comptador = 0;
+                    alfabetXifrat = "";
+                    resultat = "";
 
 
                     while (comptador <= clau.length() - 1) {
@@ -91,10 +92,8 @@ public class SubstitutionCipherModularMain {
                     }
 
                     System.out.println("El resultat del xifratge és: " + resultat);
-                    alfabetXifrat = "";
-                    resultat = "";
-                    break;
 
+                    break;
                 default:
                     System.out.println("Opció incorrecta. Introdueix de nou la opció");
             }
