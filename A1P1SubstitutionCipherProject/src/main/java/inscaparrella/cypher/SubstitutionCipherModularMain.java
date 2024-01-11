@@ -55,6 +55,7 @@ public class SubstitutionCipherModularMain {
                     System.out.println("Quin text vols desxifrar?");
                     input = keyboard.nextLine().toUpperCase();
 
+
                     resultat = SubstitutionCipherModularMain.desxifratge(input, alfabetXifrat, ALFABET);
                     System.out.println("El resultat del xifratge és: " + resultat);
                     break;
@@ -110,5 +111,13 @@ public class SubstitutionCipherModularMain {
         }
         return resultat;
 
+    }
+
+    static boolean comprovadorInput (String input, final String ALFABET){
+        char lletra;
+        boolean continuar = false;
+
+
+        return true;
     }
 }
