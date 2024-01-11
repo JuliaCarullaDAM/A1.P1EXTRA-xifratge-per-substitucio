@@ -36,7 +36,6 @@ public class SubstitutionCipherModularMain {
                     clau += ALFABET;
                     comptador = 0;
                     alfabetXifrat = "";
-                    resultat = "";
 
                     while (comptador <= clau.length() - 1) {
                         l = clau.charAt(comptador);
@@ -51,7 +50,7 @@ public class SubstitutionCipherModularMain {
 
                     comptador = 0;
                     alfabetXifrat = "";
-
+                    resultat = "";
 
                     while (comptador <= input.length() - 1) {
                         l = input.charAt(comptador);
