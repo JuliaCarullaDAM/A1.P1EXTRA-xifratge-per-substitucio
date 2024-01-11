@@ -7,9 +7,10 @@ Julio Bravo
 import java.util.Scanner;
 
 public class SubstitutionCipherModularMain {
+    static final String ALFABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
     public static void main(String[] args) {
 
-        final String ALFABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         String clau, alfabetXifrat, input, resultat;
         Scanner keyboard = new Scanner(System.in);
         int menu;
@@ -34,12 +35,12 @@ public class SubstitutionCipherModularMain {
 
                     clau += ALFABET;
                     alfabetXifrat = "";
-                    SubstitutionCipherModularMain.creadorAlfabet(clau, alfabetXifrat);
+                    SubstitutionCipherModularMain.creadorAlfabet(clau);
 
                     System.out.println("Quin text vols xifrar?");
                     input = keyboard.nextLine().toUpperCase();
                     resultat = "";
-                    SubstitutionCipherModularMain.xifratge(input, resultat, alfabetXifrat, ALFABET);
+                    SubstitutionCipherModularMain.xifratge(input, alfabetXifrat, ALFABET);
 
                     System.out.println("El resultat del xifratge és: " + resultat);
                     break;
@@ -52,13 +53,13 @@ public class SubstitutionCipherModularMain {
                     clau = clau + ALFABET;
                     alfabetXifrat = "";
 
-                    SubstitutionCipherModularMain.creadorAlfabet(clau, alfabetXifrat);
+                    alfabetXifrat = SubstitutionCipherModularMain.creadorAlfabet(clau);
 
                     System.out.println("Quin text vols desxifrar?");
                     input = keyboard.nextLine().toUpperCase();
                     resultat = "";
 
-                    SubstitutionCipherModularMain.desxifratge(input, alfabetXifrat, resultat, ALFABET);
+                    resultat = SubstitutionCipherModularMain.desxifratge(input, alfabetXifrat, ALFABET);
                     System.out.println("El resultat del xifratge és: " + resultat);
                     break;
                 default:
@@ -70,8 +71,9 @@ public class SubstitutionCipherModularMain {
         } while (menu != 0);
     }
 
-    static void creadorAlfabet(String clau, String alfabetXifrat) {
+    static String creadorAlfabet(String clau) {
         char lletra;
+        String alfabetXifrat = "";
 
         for (int i = 0; i <= clau.length() - 1; i++) {
             lletra = clau.charAt(i);
@@ -79,11 +81,14 @@ public class SubstitutionCipherModularMain {
                 alfabetXifrat += lletra + "";
             }
         }
+        return alfabetXifrat;
     }
 
-    static void xifratge(String input, String resultat, String alfabetXifrat, String ALFABET) {
+    static String xifratge(String input, String alfabetXifrat, final String ALFABET) {
         char lletra;
         int posicio;
+        String resultat = "";
+
 
         for (int i = 0; i <= input.length() - 1; i++) {
             lletra = input.charAt(i);
@@ -92,11 +97,13 @@ public class SubstitutionCipherModularMain {
                 resultat += alfabetXifrat.charAt(posicio);
             }
         }
+        return resultat;
     }
 
-    static void desxifratge(String input, String alfabetXifrat, String resultat, String ALFABET) {
+    static String desxifratge(String input, String alfabetXifrat, String ALFABET) {
         char lletra;
         int posicio;
+        String resultat = "";
 
         for (int i = 0; i <= input.length() - 1; i++) {
             lletra = input.charAt(i);
@@ -105,5 +112,7 @@ public class SubstitutionCipherModularMain {
                 resultat += ALFABET.charAt(posicio);
             }
         }
+        return resultat;
+
     }
 }
