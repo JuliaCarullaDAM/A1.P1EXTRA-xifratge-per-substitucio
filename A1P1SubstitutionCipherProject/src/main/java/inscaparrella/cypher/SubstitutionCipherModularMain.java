@@ -21,7 +21,8 @@ public class SubstitutionCipherModularMain {
             System.out.println("1. Xifrar un text");
             System.out.println("2. Desxifrar un text");
             menu = keyboard.nextInt();
-            keyboard.nextLine();;
+            keyboard.nextLine();
+            ;
 
             switch (menu) {
                 case 0:
@@ -48,6 +49,10 @@ public class SubstitutionCipherModularMain {
                     System.out.println("Quin text vols xifrar?");
                     input = keyboard.nextLine().toUpperCase();
 
+                    comptador = 0;
+                    alfabetXifrat = "";
+
+
                     while (comptador <= input.length() - 1) {
                         l = input.charAt(comptador);
                         posicio = ALFABET.indexOf(l);
@@ -59,7 +64,7 @@ public class SubstitutionCipherModularMain {
 
                     System.out.println("El resultat del xifratge és: " + resultat);
                     break;
-                    
+
                 case 2:
                     System.out.println("siusplau, introdueixi la paraula clau que es va utilitzar per xifrar el text:  ");
                     clau = keyboard.next().toUpperCase();
@@ -67,8 +72,6 @@ public class SubstitutionCipherModularMain {
                     clau = clau + ALFABET;
                     comptador = 0;
                     alfabetXifrat = "";
-                    resultat = "";
-
 
                     while (comptador <= clau.length() - 1) {
                         l = clau.charAt(comptador);
@@ -81,6 +84,8 @@ public class SubstitutionCipherModularMain {
                     System.out.println("Quin text vols desxifrar?");
                     input = keyboard.nextLine().toUpperCase();
                     System.out.println(alfabetXifrat);
+                    comptador = 0;
+                    resultat = "";
 
                     while (comptador <= input.length() - 1) {
                         l = input.charAt(comptador);
@@ -92,8 +97,8 @@ public class SubstitutionCipherModularMain {
                     }
 
                     System.out.println("El resultat del xifratge és: " + resultat);
-
                     break;
+
                 default:
                     System.out.println("Opció incorrecta. Introdueix de nou la opció");
             }
