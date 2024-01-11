@@ -54,10 +54,14 @@ public class SubstitutionCipherModularMain {
 
                     System.out.println("Quin text vols desxifrar?");
                     input = keyboard.nextLine().toUpperCase();
+                    if (!SubstitutionCipherModularMain.comprovadorInput(input, ALFABET)) {
+                        resultat = SubstitutionCipherModularMain.desxifratge(input, alfabetXifrat, ALFABET);
+                        System.out.println("El resultat del xifratge és: " + resultat);
+                    } else {
+                        System.out.println("No s'ha pogut desxifrar perque el text introduit conté caràcters especials");
+                    }
 
 
-                    resultat = SubstitutionCipherModularMain.desxifratge(input, alfabetXifrat, ALFABET);
-                    System.out.println("El resultat del xifratge és: " + resultat);
                     break;
                 default:
                     System.out.println("Opció incorrecta. Introdueix de nou la opció");
@@ -113,11 +117,16 @@ public class SubstitutionCipherModularMain {
 
     }
 
-    static boolean comprovadorInput (String input, final String ALFABET){
+    static boolean comprovadorInput(String input, final String ALFABET) {
+        boolean especial = false;
         char lletra;
-        boolean continuar = false;
-
-
-        return true;
+        for (int i = 0; i <= input.length() - 1; i++) {
+            lletra = input.charAt(i);
+            if (!ALFABET.contains(String.valueOf(lletra)))
+                especial = true;
+        }
+        return especial;
     }
 }
+
+
