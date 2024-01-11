@@ -34,13 +34,11 @@ public class SubstitutionCipherModularMain {
                     keyboard.nextLine();
 
                     clau += ALFABET;
-                    alfabetXifrat = "";
-                    SubstitutionCipherModularMain.creadorAlfabet(clau);
+                    alfabetXifrat = SubstitutionCipherModularMain.creadorAlfabet(clau);
 
                     System.out.println("Quin text vols xifrar?");
                     input = keyboard.nextLine().toUpperCase();
-                    resultat = "";
-                    SubstitutionCipherModularMain.xifratge(input, alfabetXifrat, ALFABET);
+                    resultat = SubstitutionCipherModularMain.xifratge(input, alfabetXifrat, ALFABET);
 
                     System.out.println("El resultat del xifratge és: " + resultat);
                     break;
@@ -51,13 +49,11 @@ public class SubstitutionCipherModularMain {
                     keyboard.nextLine();
 
                     clau = clau + ALFABET;
-                    alfabetXifrat = "";
 
                     alfabetXifrat = SubstitutionCipherModularMain.creadorAlfabet(clau);
 
                     System.out.println("Quin text vols desxifrar?");
                     input = keyboard.nextLine().toUpperCase();
-                    resultat = "";
 
                     resultat = SubstitutionCipherModularMain.desxifratge(input, alfabetXifrat, ALFABET);
                     System.out.println("El resultat del xifratge és: " + resultat);
